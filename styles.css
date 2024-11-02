@@ -1,0 +1,99 @@
+/* General Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Quote Box */
+.header-box {
+    background-color: #FFD700;
+    color: black;
+    padding: 40px;
+    margin: 15px;
+    border-radius: 15px;
+    width: calc(100% - 60px);
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content Section */
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Subject Boxes */
+ol {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+li {
+    border-radius: 15px;
+    padding: 40px;
+    margin: 15px;
+    width: 250px;
+    height: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Subject-Specific Colors */
+li:nth-child(1) { background-color: #FF5733; } /* Islamic Quote */
+li:nth-child(2) { background-color: #28A745; } /* ICT */
+li:nth-child(3) { background-color: #DC3545; } /* Math */
+li:nth-child(4) { background-color: #FFC107; } /* Physics */
+li:nth-child(5) { background-color: #17A2B8; } /* Chemistry */
+li:nth-child(6) { background-color: #6F42C1; } /* Biology */
+li:nth-child(7) { background-color: #007BFF; } /* English */
+li:nth-child(8) { background-color: #FF8C00; } /* Bangla */
+li:nth-child(9) { background-color: #20c997; } /* FRB */
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Text Styling for Quotes */
+.text-box {
+    background-color: #FFD700;
+    color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+}
+.bold {
+    font-weight: bold;
+    font-size: 1.7em;
+}

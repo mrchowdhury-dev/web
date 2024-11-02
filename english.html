@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1em;
+            width: 100%;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Layout styling */
+        main {
+            padding: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+        ol {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        li {
+            border-radius: 15px;
+            padding: 30px;
+            margin: 15px;
+            width: 200px;
+            height: 120px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Section colors */
+        .first-paper { background-color: #4682B4; } /* English 1st Paper */
+        .second-paper { background-color: #4169E1; } /* English 2nd Paper */
+
+        /* Home button styling */
+        .home-button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 900px;
+        }
+        .home-button {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            background-color: #4CAF50; /* Distinct color for Home button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+        .home-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>English</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h2>Select a Paper</h2>
+        <ol>
+            <!-- English 1st Paper Box -->
+            <li class="first-paper">
+                <a href="english_first_paper.html" style="text-decoration: none; color: white;">
+                    English 1st Paper
+                </a>
+            </li>
+            <!-- English 2nd Paper Box -->
+            <li class="second-paper">
+                <a href="english_second_paper.html" style="text-decoration: none; color: white;">
+                    English 2nd Paper
+                </a>
+            </li>
+        </ol>
+
+        <!-- Centered Home button below the boxes -->
+        <div class="home-button-container">
+            <a href="home.html" class="home-button">Home</a>
+        </div>
+    </main>
+
+</body>
+</html>

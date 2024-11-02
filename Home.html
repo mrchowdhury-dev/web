@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Education Website</title>
+    <style>
+        /* General Reset and Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f3; /* Soft background color for a clean look */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Style */
+        header {
+            width: 100%; /* Full width */
+            background-color: #007BFF; /* Header background color */
+            color: white; /* Header text color */
+            font-size: 2.5em; /* Increased font size */
+            text-align: center; /* Center text */
+            padding: 30px 0; /* Padding for the header */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            margin-bottom: 20px; /* Margin below header */
+        }
+
+        /* Quote Box Styling */
+        .quote-box {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for quote box */
+            color: #333; /* Text color */
+            padding: 40px; /* Padding */
+            margin: 15px; /* Margin around quote box */
+            border-radius: 15px; /* Rounded corners */
+            width: calc(100% - 60px); /* Responsive width */
+            max-width: 900px; /* Max width for larger screens */
+            text-align: center; /* Center text */
+            font-size: 1.4em; /* Slightly larger font size */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+        }
+
+        /* Main Content Section */
+        main {
+            padding: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Subject Boxes */
+        ol {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the items */
+            gap: 20px; /* Space between items */
+        }
+        li {
+            border-radius: 15px;
+            padding: 40px;
+            margin: 15px;
+            width: 250px;
+            height: 150px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for subject boxes */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white; /* Text color */
+            text-align: center; /* Center text */
+            position: relative; /* For hover effect */
+            overflow: hidden; /* Hide overflow for rounded corners */
+        }
+
+        /* Subject-Specific Colors */
+        li:nth-child(1) { background-color: #FF5733; } /* Islamic Quote */
+        li:nth-child(2) { background-color: #28A745; } /* ICT */
+        li:nth-child(3) { background-color: #DC3545; } /* Math */
+        li:nth-child(4) { background-color: #FFC107; } /* Physics */
+        li:nth-child(5) { background-color: #17A2B8; } /* Chemistry */
+        li:nth-child(6) { background-color: #6F42C1; } /* Biology */
+        li:nth-child(7) { background-color: #007BFF; } /* English */
+        li:nth-child(8) { background-color: #FF8C00; } /* Bangla */
+        li:nth-child(9) { background-color: #20c997; } /* FRB */
+
+        li:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+        }
+
+        /* Text Styling for Quote */
+        .text-box {
+            color: black; /* Text color */
+            padding: 20px; /* Padding */
+            display: flex; /* Flexbox for alignment */
+            flex-direction: column; /* Column layout */
+            align-items: center; /* Center items */
+            font-size: 1.2em; /* Font size for text */
+        }
+
+        /* Bold Text for Subject */
+        .bold {
+            font-weight: bold; /* Bold text */
+            font-size: 1.5em; /* Larger font size */
+            margin-bottom: 15px; /* Space below */
+            background-color: #FFC107; /* Distinct background for emphasis */
+            border-radius: 15px; /* Rounded corners */
+            padding: 15px; /* Padding for emphasis */
+            color: black; /* Text color */
+            text-align: center; /* Center text */
+            width: 100%; /* Full width */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for emphasis */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header {
+                font-size: 2em; /* Smaller font size for mobile */
+            }
+            .quote-box {
+                font-size: 1.2em; /* Smaller font size for quotes on mobile */
+            }
+            li {
+                padding: 30px; /* Smaller padding for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header -->
+    <header>
+        ربِّ زِدْنِي عِلْماً
+    </header>
+
+    <!-- Quote Box -->
+    <div class="quote-box">
+        <div class="text-box">
+            بسم الله الرحمن الرحيم <br>
+            قُلْ هُوَ ٱللَّهُ أَحَدٌ <br>
+            ٱللَّهُ ٱلصَّمَدُ <br>
+            لَمْ يَلِدْ وَلَمْ يُولَدْ <br>
+            وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ 
+        </div>
+        <div class="text-box">
+            Say, ˹O Prophet,˺ “He is Allah—One ˹and Indivisible˺; <br>
+            Allah—the Sustainer ˹needed by all˺. <br>
+            He has never had offspring, nor was He born. <br>
+            And there is none comparable to Him.”
+        </div>
+    </div>
+
+    <!-- Subject Links Section -->
+    <main>
+        <ol>
+            <li class="bold">“Education is a duty upon every Muslim.”</li>
+            <li><a href="ict.html" style="text-decoration: none; color: white;">ICT</a></li>
+            <li><a href="math.html" style="text-decoration: none; color: white;">Math</a></li>
+            <li><a href="physics.html" style="text-decoration: none; color: white;">Physics</a></li>
+            <li><a href="chemistry.html" style="text-decoration: none; color: white;">Chemistry</a></li>
+            <li><a href="biology.html" style="text-decoration: none; color: white;">Biology</a></li>
+            <li><a href="english.html" style="text-decoration: none; color: white;">English</a></li>
+            <li><a href="bangla.html" style="text-decoration: none; color: white;">Bangla</a></li>
+            <li><a href="frb.html" style="text-decoration: none; color: white;">FRB</a></li>
+        </ol>
+    </main>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>

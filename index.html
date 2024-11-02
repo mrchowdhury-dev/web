@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset and Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Soft blue gradient background */
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            position: relative;
+            overflow: hidden; /* Prevent scrolling due to flying text */
+        }
+
+        /* Login Container */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative; /* Allow for positioning of elements inside */
+            z-home: 1; /* Ensure it's on top of the background */
+        }
+
+        /* Header */
+        h1 {
+            font-size: 2.5em; /* Increased size for better visibility */
+            color: #ff6f61; /* Soft coral color */
+            margin-bottom: 20px;
+        }
+
+        /* Welcome Note */
+        .welcome-note {
+            font-size: 1.2em; /* Font size for welcome note */
+            color: #555; /* Slightly darker color for contrast */
+            margin-bottom: 20px; /* Space below welcome note */
+        }
+
+        /* Input Fields */
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border 0.3s ease;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #ff6f61; /* Focus color */
+            animation: pulse 0.5s; /* Pulse effect */
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Login Button */
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6f61; /* Coral color for the button */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .login-button:hover {
+            background-color: #ff4e3a; /* Darker coral on hover */
+            transform: scale(1.02); /* Slight scale effect */
+        }
+
+        /* Error Message */
+        .error-message {
+            color: #DC3545; /* Red color for error */
+            font-weight: bold;
+            display: none; /* Initially hidden */
+            margin-top: 10px;
+        }
+
+        /* Flying Text */
+        .flying-text {
+            position: absolute;
+            font-size: 2em; /* Increased size for visibility */
+            pointer-events: none; /* Prevent interaction */
+            white-space: nowrap; /* Prevent line breaks */
+            animation: fly 10s linear infinite; /* Fly animation */
+            z-home: 2; /* Ensure it's in front of the login box */
+        }
+
+        @keyframes fly {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(150px, -100px); }
+            50% { transform: translate(0, -200px); }
+            75% { transform: translate(-150px, -100px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <h1>Login</h1>
+        <div class="welcome-note">Welcome! Please enter your password to continue.</div> <!-- Welcome Note -->
+        <input type="password" id="password" class="input-field" placeholder="Enter Password" required>
+        <button class="login-button" onclick="checkPassword()">Login</button>
+        <div class="error-message" id="error-message">Incorrect password. Please try again.</div>
+    </div>
+
+    <!-- Flying Emoji -->
+    <div class="flying-text" id="flying-text">LOG IN 😁</div>
+
+    <!-- JavaScript to Check Password -->
+    <script>
+        function checkPassword() {
+            const passwordField = document.getElementById("password");
+            const errorMessage = document.getElementById("error-message");
+            const password = "@123@"; // Your set password here
+
+            if (passwordField.value === password) {
+                window.location.href = "home.html"; // Redirect to the home page on successful login
+            } else {
+                errorMessage.style.display = "block"; // Show error message if password is incorrect
+                passwordField.value = ""; // Clear the input field
+            }
+        }
+
+        // Function to move the emoji randomly around the screen
+        function moveFlyingText() {
+            const flyingText = document.getElementById("flying-text");
+            const maxWidth = window.innerWidth - flyingText.offsetWidth; // Adjust based on text width
+            const maxHeight = window.innerHeight - flyingText.offsetHeight; // Adjust based on text height
+
+            // Generate random positions
+            const offsetX = Math.random() * maxWidth;
+            const offsetY = Math.random() * maxHeight;
+
+            // Set position, ensuring it doesn't overlap with the login box
+            // Login box area: coordinates for the box's dimensions
+            const loginBox = document.querySelector('.login-container');
+            const loginBoxRect = loginBox.getBoundingClientRect();
+            const boxMargin = 20; // Space around the login box to avoid overlap
+
+            if (!(offsetX > loginBoxRect.left - boxMargin && offsetX < loginBoxRect.right + boxMargin &&
+                  offsetY > loginBoxRect.top - boxMargin && offsetY < loginBoxRect.bottom + boxMargin)) {
+                flyingText.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            } else {
+                moveFlyingText(); // Retry if in the login box area
+            }
+
+            // Repeat movement
+            setTimeout(moveFlyingText, 100); // Move every 100 milliseconds (10x faster)
+        }
+
+        // Start the flying animation
+        moveFlyingText();
+    </script>
+
+</body>
+</html>

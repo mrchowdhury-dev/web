@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f4f8; /* Background color */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3498DB; /* Header color */
+            color: white;
+            padding: 1em;
+            border-radius: 10px;
+        }
+        h1 {
+            margin: 0;
+            padding-bottom: 15px;
+        }
+        /* Content styling */
+        .content {
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: justify;
+        }
+        /* Styling for topic boxes */
+        .sub-box {
+            margin: 10px; /* Small margin for separation */
+            padding: 10px; /* Padding for topic boxes */
+            border-radius: 8px; /* Rounded corners */
+            color: white;
+            font-size: 1em; /* Smaller font size */
+            display: inline-block; /* Aligns boxes inline */
+            width: 90%; /* Make the boxes take up 90% of the width */
+            max-width: 600px; /* Optional: control max width */
+        }
+        .sub-box1 { background-color: #D32F2F; } /* Red */
+        .sub-box2 { background-color: #1976D2; } /* Blue */
+        .sub-box3 { background-color: #388E3C; } /* Green */
+        .sub-box4 { background-color: #F57C00; } /* Orange */
+        .sub-box5 { background-color: #8E44AD; } /* Purple */
+        .sub-box6 { background-color: #FFC107; } /* Yellow */
+        .sub-box7 { background-color: #7B1FA2; } /* Dark Purple */
+        .sub-box8 { background-color: #C2185B; } /* Pink */
+
+        /* Home box styling */
+        .home-box {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px;
+            background-color: #2980B9; /* Color for Home */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .home-box:hover {
+            background-color: #1B5B8C; /* Darker shade on hover */
+        }
+
+        /* Flexbox for centering the Home button */
+        .home-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            margin-top: 20px; /* Space above the button */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chemistry Topics</h1>
+    </header>
+    <div class="content">
+        <h2>Chemistry 1st Paper Topics:</h2>
+        <div class="sub-box sub-box1"><a href="qualitative_chemistry.html" style="color: white; text-decoration: none;">গুনগত রসায়ন</a></div>
+        <div class="sub-box sub-box2"><a href="periodic_properties.html" style="color: white; text-decoration: none;">মৌলের পর্যায়বৃত্ত ধর্ম ও রাসায়নিক বন্ধন</a></div>
+        <div class="sub-box sub-box3"><a href="chemical_change.html" style="color: white; text-decoration: none;">রাসায়নিক পরিবর্তন</a></div>
+        <div class="sub-box sub-box4"><a href="reactive_chemistry.html" style="color: white; text-decoration: none;">কর্মমুখী রসায়ন</a></div>
+
+        <h2>Chemistry 2nd Paper Topics:</h2>
+        <div class="sub-box sub-box5"><a href="environmental_chemistry.html" style="color: white; text-decoration: none;">পরিবেশ রসায়ন</a></div>
+        <div class="sub-box sub-box6"><a href="organic_chemistry.html" style="color: white; text-decoration: none;">জৈব রসায়ন</a></div>
+        <div class="sub-box sub-box7"><a href="quantitative_chemistry.html" style="color: white; text-decoration: none;">পরিমাণগত রসায়ন</a></div>
+        <div class="sub-box sub-box8"><a href="electrochemistry.html" style="color: white; text-decoration: none;">তড়িৎ রসায়ন</a></div>
+        
+        <div class="home-container">
+            <a href="home.html" class="home-box">Home</a>
+        </div>
+    </div>
+</body>
+</html>
